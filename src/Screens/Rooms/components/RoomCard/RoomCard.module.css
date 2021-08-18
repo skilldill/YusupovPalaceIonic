@@ -1,0 +1,42 @@
+.roomCard {
+    border-radius: 16px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.preview {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content {
+    padding: 16px;
+    background-color: #1C1C1F;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 28px;
+    color: #F8F9FA;
+    margin: 0;
+}
+
+.subTitle {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #868E96;
+    margin: 0;
+}
+
+.likeControl {
+    margin-top: 16px;
+    height: 20px;
+    width: 20px;
+    background-position: center;
+    background-size: 20px 18px;
+    background-repeat: no-repeat;
+}
