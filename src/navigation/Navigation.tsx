@@ -7,9 +7,9 @@ import {TabNavigation} from "./TabNavigation";
 export const Navigation = () => {
     const {closeModal} = useModals();
 
-    useEffect(() => {
-        App.addListener('backButton', closeModal);
-    }, [])
+    // useEffect(() => {
+    //     App.addListener('backButton', closeModal);
+    // }, [])
 
     return <TabNavigation />
 }

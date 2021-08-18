@@ -1,0 +1,6 @@
+{
+	"appId": "com.example.app",
+	"appName": "yusupov-palace",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}

@@ -14,11 +14,13 @@ code {
 }
 
 .ion-page {
+  background-color: #050506;
   box-shadow: 0px 0px 45px rgba(0, 0, 0, 0.411);
 }
 
 .ios,  
-.md {
+.md,
+ion-content {
   background-color: #050506;
 } 
 

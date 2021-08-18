@@ -1,0 +1,23 @@
+.navbar {
+    padding: 12px;
+    position: relative;
+}
+
+.title {
+    font-size: 18px;
+    line-height: 24px;
+    color: #F8F9FA;
+    text-align: center;
+    margin: 0;
+}
+
+.arrowBack {
+    position: absolute;
+    width: 8px;
+    height: 14px;
+    top: 17px;
+    left: 12px;
+    background-image: url(~assets/arrow-back.svg);
+    background-position: center;
+    background-size: 8px 14px;
+}
