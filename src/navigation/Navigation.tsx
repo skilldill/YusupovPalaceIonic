@@ -3,13 +3,19 @@ import { useModals } from "react-mobile-modals";
 import {App} from "@capacitor/app";
 
 import {TabNavigation} from "./TabNavigation";
+import { AudioPlayerControl } from "Screens";
 
 export const Navigation = () => {
     const {closeModal} = useModals();
 
-    // useEffect(() => {
-    //     App.addListener('backButton', closeModal);
-    // }, [])
+    useEffect(() => {
+        App.addListener('backButton', closeModal);
+    }, [])
 
-    return <TabNavigation />
+    return (
+        <>
+            <AudioPlayerControl />
+            <TabNavigation />
+        </>
+    )
 }

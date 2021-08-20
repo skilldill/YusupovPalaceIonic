@@ -1,0 +1,75 @@
+.roomTop {
+    position: relative;
+    padding: 0px 8px;
+}
+
+.roomPhoto {
+    position: relative;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.gradientLayer {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(0deg, rgba(5, 5, 6, 0.8) 0%, rgba(49, 49, 49, 0) 100%);
+}
+
+.audioButton {
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -24px;
+    align-self: center;
+    left: calc(50% - 24px);
+}
+
+.audioIcon {
+    background-size: 16px 20px;
+    background-position: center;
+    background-repeat: no-repeat; 
+    width: 16px;
+    height: 20px;
+}
+
+.roomContent {
+    padding: 0 16px;
+}
+
+p {
+    margin: 0;
+}
+
+.title {
+    margin-top: 56px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 32px;
+    text-align: center;
+    color: #F8F9FA;
+}
+
+.subTitle {
+    margin-top: 12px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #868E96;
+}
+
+.description {
+    margin-top: 24px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #F8F9FA;
+}

@@ -1,9 +1,7 @@
 import React from "react";
-import {IonIcon} from "@ionic/react";
-import {person, settings, image} from "ionicons/icons";
 
 import { Tabs, Tab, TabIcon } from "../core/components/Tabs";
-import {Settings, Profile, Main, Room, Rooms} from "../Screens";
+import {Rooms} from "../Screens";
 import {ListSVG, HeartOutlineSVG, HeartSVG, ListGraySVG} from "../assets";
 import { ModalsProvider } from "react-mobile-modals";
 

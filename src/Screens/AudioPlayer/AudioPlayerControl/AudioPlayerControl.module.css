@@ -1,0 +1,62 @@
+.control {
+    background-color: #1A1A1F;
+    padding: 12px 16px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: calc(var(--ion-safe-area-bottom) + 62px);
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #050506;
+}
+
+p {
+    margin: 0;
+}
+
+.controlInfo {
+    display: flex;
+    align-items: center;
+}
+
+.controlPreview {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background-position: center;
+    background-size: cover;
+    margin-right: 16px;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    display: flex;
+    color: #F8F9FA;
+    margin-bottom: 4px;
+}
+
+.subTitle {
+    font-size: 14px;
+    line-height: 16px;
+    color: #868E96;
+}
+
+.audioButton {
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.audioIcon {
+    width: 10px;
+    height: 12px;
+    background-size: 10px 12px;
+}

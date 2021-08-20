@@ -20,15 +20,17 @@ import '@ionic/react/css/display.css';
 import 'react-mobile-modals/dist/index.css'
 
 import {Navigation} from "./navigation";
-import { RoomsProvider } from 'core/contexts';
+import { AudioPlayerProvider, RoomsProvider } from 'core/contexts';
 
 function App() {
   return (
-    <RoomsProvider>
-      <IonApp>
-        <Navigation />
-      </IonApp>
-    </RoomsProvider>
+    <AudioPlayerProvider>
+      <RoomsProvider>
+        <IonApp>
+          <Navigation />
+        </IonApp>
+      </RoomsProvider>
+    </AudioPlayerProvider>
   );
 }
 

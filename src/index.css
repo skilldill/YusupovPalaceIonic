@@ -24,6 +24,10 @@ ion-content {
   background-color: #050506;
 } 
 
+audio {
+  display: none;
+}
+
 .dark {
   --ion-color-primary: #428cff;
   --ion-color-primary-rgb: 66, 140, 255;
