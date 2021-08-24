@@ -1,22 +1,24 @@
 import { StartPlayerSVG, StopPlayerSVG } from "assets";
 import { AudioPlayerStore } from "core/contexts";
-import React from "react";
+import React, { useState } from "react";
 import { useModals } from "react-mobile-modals";
 import { AudioPlayerScreen } from "../AudioPlayerScreen";
 
 import styles from "./AudioPlayerControl.module.css";
 
 export const AudioPlayerControl = () => {
-    const {sound, audioData, play, pause, plaing} = AudioPlayerStore();
+    const {stoped, audioData, play, pause, plaing} = AudioPlayerStore();
     const {openModal} = useModals();
 
-    if (!audioData) {
+    const [openedScreen, setOpenedScreen] = useState(false);
+
+    if (stoped) {
         return null;
     }
 
     const handlePlayer = (event: React.MouseEvent) => {
         event.stopPropagation();
-
+        
         if (plaing) {
             pause();
         } else {
@@ -25,21 +27,26 @@ export const AudioPlayerControl = () => {
     }
 
     const handleOpenAudioPlayer = () => {
-        console.log(openModal);
+        setOpenedScreen(true);
+
         openModal({ 
-            component: <AudioPlayerScreen />, 
+            component: <AudioPlayerScreen onClose={() => setOpenedScreen(false)}/>, 
             openDirection: 'vertical' 
         })
     }
 
     return (
-        <div className={styles.control} onTouchEnd={handleOpenAudioPlayer}>
+        <div 
+            className={styles.control} 
+            onClick={handleOpenAudioPlayer}
+            style={{display: openedScreen ? 'none' : 'flex'}}
+        >
             <div className={styles.controlInfo}>
-                <div className={styles.controlPreview} style={{backgroundImage: `url(${audioData.photo})`}} />
+                <div className={styles.controlPreview} style={{backgroundImage: `url(${audioData!.photo})`}} />
                 
                 <div>
-                    <p className={styles.title}>{audioData.name}</p>
-                    <p className={styles.subTitle}>Комната №{audioData.id}</p>
+                    <p className={styles.title}>{audioData!.name}</p>
+                    <p className={styles.subTitle}>Комната №{audioData!.id}</p>
                 </div>
             </div>
 

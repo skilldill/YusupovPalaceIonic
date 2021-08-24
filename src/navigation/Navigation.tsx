@@ -12,10 +12,5 @@ export const Navigation = () => {
         App.addListener('backButton', closeModal);
     }, [])
 
-    return (
-        <>
-            <AudioPlayerControl />
-            <TabNavigation />
-        </>
-    )
+    return <TabNavigation />;
 }

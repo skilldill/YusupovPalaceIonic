@@ -6,6 +6,7 @@ export const AudioPlayerProvider: FC = ({children}) => {
     const [audioData, setAudioData] = useState<RoomModel>();
     const [sound, setSound] = useState<HTMLAudioElement>();
     const [plaing, setPlaing] = useState(false);
+    const [stoped, setStoped] = useState(true);
 
     useEffect(() => {
         if (!!audioData) {
@@ -17,6 +18,7 @@ export const AudioPlayerProvider: FC = ({children}) => {
     const handlePlay = () => {
         if (!!sound) {
             sound.play();
+            setStoped(false);
             setPlaing(true);
         }
     }
@@ -33,6 +35,7 @@ export const AudioPlayerProvider: FC = ({children}) => {
             sound.pause();
             setSound(undefined);
             setPlaing(false);
+            setStoped(true);
         }
     }
 
@@ -41,7 +44,8 @@ export const AudioPlayerProvider: FC = ({children}) => {
         audioData,
         plaing,
         sound,
-        
+        stoped,
+
         play: handlePlay,
         pause: handlePause,
         stop: handleStop,

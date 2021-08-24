@@ -3,6 +3,8 @@ import { StartPlayerSVG, StopPlayerSVG } from "assets";
 import { Navbar } from "core/components";
 import { AudioPlayerStore } from "core/contexts";
 import React, { FC, useCallback, useEffect, useState } from "react";
+import { useModals } from "react-mobile-modals";
+import { AudioPlayerScreen } from "Screens/AudioPlayer";
 import { ApiService } from "shared/api";
 import { Background } from "shared/components";
 import { RoomModel } from "shared/models/Rooms.models";

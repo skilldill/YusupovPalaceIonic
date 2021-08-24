@@ -2,3 +2,27 @@
     background-color: #1A1A1F;
     padding: 12px 16px;
 }
+
+.navbar {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbarClose {
+    width: 16px;
+    height: 16px;
+    background-image: url(~assets/close.svg);
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+}
+
+.navbarLike {
+    width: 20px;
+    height: 18px;
+    background-color: #fff;
+    mask: url(~assets/heart-outline.svg);
+    background-size: 20px 18px;
+    background-repeat: no-repeat;
+}

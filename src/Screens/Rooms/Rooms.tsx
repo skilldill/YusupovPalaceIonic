@@ -2,6 +2,7 @@ import { IonContent, IonItem, IonList, IonPage, IonSpinner } from "@ionic/react"
 import { Navbar } from "core/components";
 import { RoomsStore } from "core/contexts";
 import React, { FC, useMemo } from "react";
+import { AudioPlayerControl } from "Screens/AudioPlayer";
 import { Background, LoaderScreen } from "shared/components";
 import { RoomCard } from "./components";
 
@@ -19,20 +20,23 @@ export const Rooms: FC<RoomsProps> = ({liked}) => {
         rooms, [rooms, liked])
 
     return (
-        <IonPage>
-            <Navbar title="Комнаты" />
+        <>
+            <IonPage>
+                <Navbar title="Комнаты" />
 
-            <IonContent className={styles.rooms} >
-                <Background>
-                    {!!prepareRooms.length ? (
-                        <IonList className={styles.roomsList}>
-                            {prepareRooms.map((room, i) => 
-                                <RoomCard key={i} room={room} />
-                            )}
-                        </IonList>
-                    ): <LoaderScreen />}
-                </Background>
-            </IonContent>
-        </IonPage>
+                <IonContent className={styles.rooms} >
+                    <Background>
+                        {!!prepareRooms.length ? (
+                            <IonList className={styles.roomsList}>
+                                {prepareRooms.map((room, i) => 
+                                    <RoomCard key={i} room={room} />
+                                )}
+                            </IonList>
+                        ): <LoaderScreen />}
+                    </Background>
+                </IonContent>
+            </IonPage>
+            <AudioPlayerControl />
+        </>
     )
 }

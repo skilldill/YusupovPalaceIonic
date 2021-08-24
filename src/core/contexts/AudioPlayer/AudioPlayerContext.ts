@@ -6,6 +6,8 @@ interface AudioPlayerContextModel {
     audioData: RoomModel | undefined;
     plaing: boolean;
     sound: any;
+    stoped: boolean;
+
     play: () => void;
     pause: () => void;
     stop: () => void;
@@ -14,10 +16,12 @@ interface AudioPlayerContextModel {
 export const AudioPlayerContext = createContext<AudioPlayerContextModel>({
     setAudioData: () => {},
     audioData: undefined,
+    stoped: true,
+    plaing: false,
+    sound: undefined,
+    
     play: () => {},
     pause: () => {},
     stop: () => {},
-    plaing: false,
-    sound: undefined,
 })
 

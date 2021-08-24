@@ -6,6 +6,7 @@ import ListGraySVG from "./list-gray.svg";
 import SpinnerSVG from "./spinner.svg";
 import StartPlayerSVG from "./start-player.svg";
 import StopPlayerSVG from "./stop-player.svg";
+import CloseSVG from "./close.svg";
 
 export {
     HeartOutlineSVG,
@@ -15,5 +16,6 @@ export {
     ListGraySVG,
     SpinnerSVG,
     StartPlayerSVG,
-    StopPlayerSVG
+    StopPlayerSVG,
+    CloseSVG
 }
