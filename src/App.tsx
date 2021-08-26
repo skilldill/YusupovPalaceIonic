@@ -18,19 +18,23 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
 import 'react-mobile-modals/dist/index.css'
+import 'react-mobile-stack-router/dist/index.css';
 
 import {Navigation} from "./navigation";
 import { AudioPlayerProvider, RoomsProvider } from 'core/contexts';
+import { MobileNavigation } from 'react-mobile-stack-router';
 
 function App() {
   return (
-    <AudioPlayerProvider>
-      <RoomsProvider>
-        <IonApp>
-          <Navigation />
-        </IonApp>
-      </RoomsProvider>
-    </AudioPlayerProvider>
+    <MobileNavigation>
+      <AudioPlayerProvider>
+        <RoomsProvider>
+          <IonApp>
+            <Navigation />
+          </IonApp>
+        </RoomsProvider>
+      </AudioPlayerProvider>
+    </MobileNavigation>
   );
 }
 

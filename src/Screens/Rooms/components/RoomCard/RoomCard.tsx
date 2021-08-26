@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useMemo } from "react";
+import React, { FC, useCallback, useEffect, useMemo } from "react";
 
 import { RoomItemModel } from "shared/models/Rooms.models";
 import { HeartGrayOutlineSVG, HeartSVG } from "assets";
@@ -6,14 +6,20 @@ import styles from "./RoomCard.module.css";
 import { RoomsStore } from "core/contexts";
 import { useModals } from "react-mobile-modals";
 import { Room } from "Screens";
+import { useStackNavigation } from "react-mobile-stack-router";
 
 interface RoomCardProps {
     room: RoomItemModel
 }
 
 export const RoomCard: FC<RoomCardProps> = ({room}) => {
-    const {likeRoom, likedRooms} = RoomsStore();
-    const {openModal} = useModals();
+    const {likeRoom, likedRooms, activeListName} = RoomsStore();
+
+    useEffect(() => {
+        console.log(activeListName);
+    }, [activeListName])
+
+    const history = useStackNavigation(activeListName);
 
     const handleLikeRoom = (event: React.MouseEvent) => {
         event.stopPropagation();
@@ -23,7 +29,7 @@ export const RoomCard: FC<RoomCardProps> = ({room}) => {
     const isLiked = useMemo(() => likedRooms.includes(room.id), [likedRooms, room.id])
 
     const handleClickCard = useCallback(() => {
-        openModal({ component: <Room id={room.id} /> })
+        history.push('room', {id: room.id});
     }, [])
 
     return (

@@ -1,9 +1,10 @@
 import { IonContent, IonPage } from "@ionic/react";
 import { StartPlayerSVG, StopPlayerSVG } from "assets";
 import { Navbar } from "core/components";
-import { AudioPlayerStore } from "core/contexts";
+import { AudioPlayerStore, RoomsStore } from "core/contexts";
 import React, { FC, useCallback, useEffect, useState } from "react";
 import { useModals } from "react-mobile-modals";
+import { useStackNavigation, useStackParams } from "react-mobile-stack-router";
 import { AudioPlayerScreen } from "Screens/AudioPlayer";
 import { ApiService } from "shared/api";
 import { Background } from "shared/components";
@@ -11,14 +12,13 @@ import { RoomModel } from "shared/models/Rooms.models";
 
 import styles from "./Room.module.css";
 
-interface RoomProps {
-    id: number
-}
-
-export const Room: FC<RoomProps> = (props) => {
-    const {id} = props;
-
+export const Room = () => {
     const {setAudioData, plaing, play, pause, stop, audioData} = AudioPlayerStore();
+    const {activeListName} = RoomsStore();
+
+    const history = useStackNavigation(activeListName);
+
+    const {id} = useStackParams<{id: number}>();
 
     const [room, setRoom] = useState<RoomModel>();
 
@@ -56,7 +56,7 @@ export const Room: FC<RoomProps> = (props) => {
 
     return (
         <IonPage>
-            <Navbar withBack title="Комната" />
+            <Navbar withBack title="Комната" onClose={history.back} />
 
             <IonContent>
                 <Background>

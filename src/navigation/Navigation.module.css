@@ -1,0 +1,5 @@
+.tabbar {
+    padding-bottom: var(--ion-safe-area-bottom, 0);
+    background-color: #1C1C1F;
+    border: none
+}

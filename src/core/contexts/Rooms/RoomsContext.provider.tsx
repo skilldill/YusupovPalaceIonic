@@ -8,6 +8,7 @@ import { getLikedRooms } from "shared/utils/Storage.utils";
 export const RoomsProvider: FC = ({children}) => {
     const [rooms, setRooms] = useState<RoomItemModel[]>([]);
     const [likedRooms, setLikedRooms] = useState<number[]>([]);
+    const [activeListName, setActiveListName] = useState("all");
 
     const fetchRooms = async () => {
         try {
@@ -45,7 +46,9 @@ export const RoomsProvider: FC = ({children}) => {
     const values = {
         rooms,
         likedRooms,
-        likeRoom
+        likeRoom,
+        activeListName,
+        setActiveListName
     }
 
     return (
