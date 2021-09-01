@@ -1,5 +1,6 @@
 import React from 'react';
 import {IonApp} from "@ionic/react";
+import {Capacitor} from "@capacitor/core";
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -26,7 +27,7 @@ import { MobileNavigation } from 'react-mobile-stack-router';
 
 function App() {
   return (
-    <MobileNavigation>
+    <MobileNavigation platform={Capacitor.getPlatform() as "android" | "ios"}>
       <AudioPlayerProvider>
         <RoomsProvider>
           <IonApp>

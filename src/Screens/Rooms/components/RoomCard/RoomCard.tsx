@@ -30,7 +30,7 @@ export const RoomCard: FC<RoomCardProps> = ({room}) => {
 
     const handleClickCard = useCallback(() => {
         history.push('room', {id: room.id});
-    }, [])
+    }, [history])
 
     return (
         <div className={styles.roomCard} onClick={handleClickCard}>
